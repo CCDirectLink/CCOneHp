@@ -6,12 +6,20 @@ document.body.addEventListener('modsLoaded', function() {
 			simplify.setCurrentHp(cc.ig.playerInstance(), 1);
 			
 			Object.defineProperty(cc.ig.playerInstance(), entries.fallDmgFactor, {
-				value : 1,
-				writable : false
+				set(b)  {
+					this.value = 1;
+				},
+				get() {
+					return this.value;
+				}
 			});
 			Object.defineProperty(cc.ig.playerInstance()[entries.param], entries.damageFactor, {
-				value : 1,
-				writable : false
+				set(b)  {
+					this.value = 1;
+				},
+				get() {
+					return this.value;
+				}
 			});	
 		}
 	  }
