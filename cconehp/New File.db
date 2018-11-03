@@ -1,0 +1,84 @@
+{
+    "tree": {
+        "name": "cc",
+        "type": "object",
+        "children": [
+            {
+                "type": "raw",
+                "name": "fallDmgFactor",
+                "parent": ""
+            },
+            {
+                "type": "raw",
+                "name": "ModelCallBackFunction"
+            },
+            {
+                "type": "raw",
+                "name": "damageFactor",
+                "parent": ""
+            },
+            {
+                "type": "raw",
+                "name": "baseParams"
+            }
+        ]
+    },
+    "entries": {
+        "ModelCallBackFunction": {
+            "type": "select",
+            "pattern": "properties.2.value.body.body.0.body.expression.callee.property.name",
+            "from": {
+                "type": "ObjectExpression",
+                "values": [
+                    {
+                        "name": "properties.0.value.body.body.0.expression.right.arguments.0.arguments.0.raw",
+                        "value": "\"Given Observer is null!\""
+                    }
+                ]
+            }
+        },
+        "baseParams": {
+            "type": "select",
+            "pattern": "left.object.property.name",
+            "from": {
+                "type": "AssignmentExpression",
+                "values": [
+                    {
+                        "name": "right.left.property.name",
+                        "value": "elemFactor"
+                    },
+                    {
+                        "name": "left.property.name",
+                        "value": "elemFactor"
+                    }
+                ]
+            }
+        },
+        "damageFactor": {
+            "type": "select",
+            "pattern": "left.property.name",
+            "from": {
+                "type": "AssignmentExpression",
+                "values": [
+                    {
+                        "name": "right.property.name",
+                        "value": "damageFactor"
+                    }
+                ]
+            }
+        },
+        "fallDmgFactor": {
+            "type": "select",
+            "pattern": "left.property.name",
+            "from": {
+                "type": "AssignmentExpression",
+                "values": [
+                    {
+                        "name": "right.property.name",
+                        "value": "fallDmgFactor"
+                    }
+                ]
+            }
+        }
+    }
+}
